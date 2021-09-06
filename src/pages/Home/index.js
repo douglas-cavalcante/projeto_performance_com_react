@@ -10,6 +10,8 @@ const Home = () => {
   const scrollCardsRef = useRef(null);
 
   const [search, setSearch] = useState('');
+  const [sectorOption, setSectorOption] = useState('');
+
   const [zappers, setZappers] = useState([]);
 
   useEffect(() => {
@@ -33,6 +35,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -48,6 +51,21 @@ const Home = () => {
             placeholder="Pesquisa por um colaborador ..."
             ref={inputSearchRef}
           />
+          <select
+            value={sectorOption}
+            onChange={(e) => setSectorOption(e.target.value)}
+            className="select-sector"
+          >
+            <option>
+              Marketing
+            </option>
+            <option>
+              Desenvolvimento de BOT
+            </option>
+            <option>
+              QA
+            </option>
+          </select>
         </form>
 
 

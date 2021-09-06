@@ -10,7 +10,7 @@ const ZappersList = ({ zappers }) => {
   return (
     <>
       <section className="cards-content">
-        {zappers.map(pessoa => <ZapperItem key={pessoa.name} zapper={pessoa} />)}
+        {renderCustomersList}
       </section>
     </>
   );
